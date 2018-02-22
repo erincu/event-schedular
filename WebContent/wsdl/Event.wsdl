@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://awt.java" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://awt.java" xmlns:intf="http://awt.java" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://awt.java" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="toString">
+    <complexType/>
+   </element>
+   <element name="toStringResponse">
+    <complexType>
+     <sequence>
+      <element name="toStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="translate">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:int"/>
+      <element name="in1" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="translateResponse">
+    <complexType/>
+   </element>
+   <element name="controlDown">
+    <complexType/>
+   </element>
+   <element name="controlDownResponse">
+    <complexType>
+     <sequence>
+      <element name="controlDownReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="metaDown">
+    <complexType/>
+   </element>
+   <element name="metaDownResponse">
+    <complexType>
+     <sequence>
+      <element name="metaDownReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="shiftDown">
+    <complexType/>
+   </element>
+   <element name="shiftDownResponse">
+    <complexType>
+     <sequence>
+      <element name="shiftDownReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="shiftDownRequest">
+
+      <wsdl:part element="impl:shiftDown" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="metaDownResponse">
+
+      <wsdl:part element="impl:metaDownResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringRequest">
+
+      <wsdl:part element="impl:toString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringResponse">
+
+      <wsdl:part element="impl:toStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlDownResponse">
+
+      <wsdl:part element="impl:controlDownResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="shiftDownResponse">
+
+      <wsdl:part element="impl:shiftDownResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="translateResponse">
+
+      <wsdl:part element="impl:translateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="metaDownRequest">
+
+      <wsdl:part element="impl:metaDown" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="translateRequest">
+
+      <wsdl:part element="impl:translate" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlDownRequest">
+
+      <wsdl:part element="impl:controlDown" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Event">
+
+      <wsdl:operation name="toString">
+
+         <wsdl:input message="impl:toStringRequest" name="toStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:toStringResponse" name="toStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="translate">
+
+         <wsdl:input message="impl:translateRequest" name="translateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:translateResponse" name="translateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlDown">
+
+         <wsdl:input message="impl:controlDownRequest" name="controlDownRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:controlDownResponse" name="controlDownResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="metaDown">
+
+         <wsdl:input message="impl:metaDownRequest" name="metaDownRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:metaDownResponse" name="metaDownResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="shiftDown">
+
+         <wsdl:input message="impl:shiftDownRequest" name="shiftDownRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:shiftDownResponse" name="shiftDownResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EventSoapBinding" type="impl:Event">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="toString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="toStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="toStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="translate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="translateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="translateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlDown">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="controlDownRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="controlDownResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="metaDown">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="metaDownRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="metaDownResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="shiftDown">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="shiftDownRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="shiftDownResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="EventService">
+
+      <wsdl:port binding="impl:EventSoapBinding" name="Event">
+
+         <wsdlsoap:address location="http://localhost:8080/Event_Schedular/services/Event"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

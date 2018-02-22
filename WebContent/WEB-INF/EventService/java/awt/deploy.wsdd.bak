@@ -1,0 +1,38 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EventService WSDL service -->
+
+  <service name="Event" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://awt.java"/>
+      <parameter name="wsdlServiceElement" value="EventService"/>
+      <parameter name="schemaQualified" value="http://awt.java"/>
+      <parameter name="wsdlServicePort" value="Event"/>
+      <parameter name="className" value="java.awt.EventSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Event"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="toString" qname="operNS:toString" xmlns:operNS="http://awt.java" returnQName="retNS:toStringReturn" xmlns:retNS="http://awt.java" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="translate" qname="operNS:translate" xmlns:operNS="http://awt.java" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://awt.java" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://awt.java" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="controlDown" qname="operNS:controlDown" xmlns:operNS="http://awt.java" returnQName="retNS:controlDownReturn" xmlns:retNS="http://awt.java" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="metaDown" qname="operNS:metaDown" xmlns:operNS="http://awt.java" returnQName="retNS:metaDownReturn" xmlns:retNS="http://awt.java" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="shiftDown" qname="operNS:shiftDown" xmlns:operNS="http://awt.java" returnQName="retNS:shiftDownReturn" xmlns:retNS="http://awt.java" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="controlDown shiftDown metaDown toString translate"/>
+
+  </service>
+</deployment>
